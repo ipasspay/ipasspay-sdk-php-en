@@ -5,7 +5,7 @@
 //2.If you use zip file package directly, please put the decompressed files named src into the project by yourself and ensure that the SDK package can be referenced correctly.
 
 
-use Ipasspay\IpasspayChannel\config\IpasspayConfig;
+use Ipasspay\IpasspayChannel\config\IpasspayConstant;
 use Ipasspay\IpasspayChannel\service\IpasspayService;
 
     //Order query endpoint
@@ -32,13 +32,13 @@ use Ipasspay\IpasspayChannel\service\IpasspayService;
     echo 'Response Data：'.json_encode($ipasspay_service->getResponseData(),JSON_UNESCAPED_UNICODE+JSON_UNESCAPED_SLASHES)."\n";
 
     switch ($ipasspay_service->getResponseCode()) {
-        case IpasspayConfig::RESPONSE_CODE['SUCCESS']:
+        case IpasspayConstant::RESPONSE_CODE['SUCCESS']:
             //The response is normal（Note：There is no signature in the response of order query）
             $response_data=$ipasspay_service->getResponseData();
             //todo please use the response data(array) for business processing......
             break;
-        case IpasspayConfig::RESPONSE_CODE['REQUEST FAIL']:
-        case IpasspayConfig::RESPONSE_CODE['INVALID PARAMETER']:
+        case IpasspayConstant::RESPONSE_CODE['REQUEST FAIL']:
+        case IpasspayConstant::RESPONSE_CODE['INVALID PARAMETER']:
         default:
             //The response is abnormal
             echo $ipasspay_service->getResponseMsg();//Get more info for abnormal

@@ -3,6 +3,7 @@ namespace Ipasspay\IpasspayChannel\service;
 
 use Ipasspay\baseChannel\validate\Validate;
 use Ipasspay\IpasspayChannel\config\IpasspayConfig;
+use Ipasspay\IpasspayChannel\config\IpasspayConstant;
 use Ipasspay\IpasspayChannel\logic\CancelRefundLogic;
 use Ipasspay\IpasspayChannel\logic\NotifyOrderLogic;
 use Ipasspay\IpasspayChannel\logic\OnlinePayRedirectLogic;
@@ -91,7 +92,7 @@ class IpasspayService extends ChannelService
             Header("Location:".$redirect_pay);
             return true;
         } else {
-            $this->error_code=IpasspayConfig::ERROR_CODE['REQUEST URL ERROR'];
+            $this->error_code=IpasspayConstant::ERROR_CODE['REQUEST URL ERROR'];
             $this->error_msg='GET request url error';
             return false;
         }
@@ -103,7 +104,7 @@ class IpasspayService extends ChannelService
             echo $this->htmlRequest($redirect_url,$this->handler->getRequestData());
             return true;
         } else {
-            $this->error_code=IpasspayConfig::ERROR_CODE['REQUEST URL ERROR'];
+            $this->error_code=IpasspayConstant::ERROR_CODE['REQUEST URL ERROR'];
             $this->error_msg='GET request url error';
             return false;
         }
@@ -138,7 +139,7 @@ class IpasspayService extends ChannelService
         if (isset($content['errcode'])) {
             return $content['errcode'];
         }
-        return IpasspayConfig::RESPONSE_CODE['REQUEST FAIL'];
+        return IpasspayConstant::RESPONSE_CODE['REQUEST FAIL'];
     }
 
     public function getResponseMsg() {

@@ -1188,7 +1188,7 @@ class Validate
         } elseif (0 === strpos($type, 'require')) {
             $msg = self::$typeMsg['require'];
         } else {
-            $msg = $title . 'not conform to the rules';
+            $msg = $title . ' not conform to the rules';
         }
 
         if (!is_string($msg)) {

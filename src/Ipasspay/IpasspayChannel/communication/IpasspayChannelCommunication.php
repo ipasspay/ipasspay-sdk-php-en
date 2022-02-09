@@ -3,7 +3,7 @@ namespace Ipasspay\IpasspayChannel\communication;
 
 use Ipasspay\baseChannel\communication\ChannelCommunication;
 use Ipasspay\baseChannel\tools\Curl;
-use Ipasspay\IpasspayChannel\config\IpasspayConfig;
+use Ipasspay\IpasspayChannel\config\IpasspayConstant;
 
 class IpasspayChannelCommunication extends ChannelCommunication
 {
@@ -25,7 +25,7 @@ class IpasspayChannelCommunication extends ChannelCommunication
                 return true;
             }
 
-            $this->error_code=IpasspayConfig::ERROR_CODE['REQUEST INTERFACE EXCEPTION'];
+            $this->error_code=IpasspayConstant::ERROR_CODE['REQUEST INTERFACE EXCEPTION'];
             $this->error_msg='abnormal response data';
             return false;
         } else {

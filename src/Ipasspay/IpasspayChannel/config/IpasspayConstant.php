@@ -2,41 +2,8 @@
 
 namespace Ipasspay\IpasspayChannel\config;
 
-class IpasspayConfig
+class IpasspayConstant
 {
-    //Fill in the blanks based on the actual situation
-    const ENV_CONFIG = [
-        'live'=>[
-            "merchant_id" => "",
-            "app_id" => "",
-            "version" => "",
-            "api_secret"=>"",
-
-            "direct_pay_url" => "https://service.ipasspay.biz/gateway/OpenApi/onlinePay",
-            "redirect_pay_url" => "https://service.ipasspay.biz/gateway/Index/checkout",
-            "query_order_url" => "https://service.ipasspay.biz/gateway/OpenApi/getOrderDetail",
-            "query_order_list_url" => "https://service.ipasspay.biz/gateway/OpenApi/getOrderList",
-            "refund_url" => "https://service.ipasspay.biz/gateway/OpenApi/refund",
-            "cancel_refund_url" => "https://service.ipasspay.biz/gateway/OpenApi/cancelRefund",
-            "upload_express_url" => "https://service.ipasspay.biz/gateway/OpenApi/uploadExpress",
-        ],
-        'sandbox'=>[
-            "merchant_id" => "10011019120317101413249927981",
-            "app_id" => "19120455974948131",
-            "version" => "2.0",
-            "api_secret"=>"LEMiaDoJCGzVp0nZzoWzWmgxdlKc",
-
-            "direct_pay_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/onlinePay",
-            "redirect_pay_url" => "https://sandbox.service.ipasspay.biz/gateway/Index/checkout",
-            "query_order_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/getOrderDetail",
-            "query_order_list_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/getOrderList",
-            "refund_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/refund",
-            "cancel_refund_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/cancelRefund",
-            "upload_express_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/uploadExpress",
-        ],
-    ];
-    //------------------
-
     //It is not recommended to modify the parameters, we will adjust them through technical notification or version update if they need to be modified.
     const PAY_PARAM = [
         'base' => [
@@ -125,13 +92,13 @@ class IpasspayConfig
         'ship_zip' => 'max:200',
         'ship_email' => 'email|max:60',
 
-        'custom_data' => 'is_string|max:2000',
+        'custom_data' => 'max:2000',
         'timestamp' => 'number|length:10',
 
         'gateway_order_no' => 'number|max:40',
         'refund_no'=>'alphaDash|length:1,48',
         'refund_amount'=>'float|gt:0|api_amount',
-        'refund_desc'=> 'is_string|max:200',
+        'refund_desc'=> 'max:200',
 
         'start_datetime' => 'dateFormat:Y-m-d H:i:s',
         'end_datetime' => 'dateFormat:Y-m-d H:i:s',

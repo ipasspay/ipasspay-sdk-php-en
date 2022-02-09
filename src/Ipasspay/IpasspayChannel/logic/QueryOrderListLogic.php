@@ -1,7 +1,7 @@
 <?php
 namespace Ipasspay\IpasspayChannel\logic;
 
-use Ipasspay\IpasspayChannel\config\IpasspayConfig;
+use Ipasspay\IpasspayChannel\config\IpasspayConstant;
 
 class QueryOrderListLogic extends IpasspayChannelCommonLogic
 {
@@ -35,7 +35,7 @@ class QueryOrderListLogic extends IpasspayChannelCommonLogic
         $this->request_data['timestamp']=time();
         //Initialize the request data
         if (!$this->setRequestUrl()->createCommonData($params)->appendData()->validateData()) {
-            $this->error_code=IpasspayConfig::ERROR_CODE['REQUEST PARAM ERROR'];
+            $this->error_code=IpasspayConstant::ERROR_CODE['REQUEST PARAM ERROR'];
             $this->error_msg=$this->validate_obj->getError();
             return false;
         }
