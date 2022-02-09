@@ -1,0 +1,21 @@
+[Instructions for using the SDK]
+1.If you need to use this SDK, please configure the parameters in IpasspayChannel/config/IpasspayConfig.php first.
+2.By the SDK, you will simply create the request data according the API documentation, use the demo as needed, and communicate with iPasspay.
+3.By the SDK, there's no need to worry about timestamp, signatures, and verification, the SDK is already integrated, it can be called directly to complete encryption, verification and communication.
+4.The SDK will process the response data, and you can directly obtain the response data in the form of array through the corresponding method.
+5.The SDK will pre-judge parameters before initiating a request to reduce invalid server network overhead and facilitate the discovery of errors during integration.
+5.It is suggested that merchants with technical ability to use SDK package should use it as far as possible. The SDK package supports PHP5.6 to PHP8.1.
+
+[File description in Demo]
+directPay.php : Payment Gateway(Direct)
+redirectPay.php : Payment Gateway(Host)
+ipasspayNotify.php : Asyn notification
+ipasspayReturn.php : Syn notification
+refund.php : Refund endpoint
+cancelRefund.php : Cancel refund endpoint
+queryOrder.php : Order query endpoint
+queryOrderList.php : Query order list endpoint
+uploadExpress.php : Tracking upload endpoint
+
+[API document link]
+https://www.apihome.dev/ipasspay.biz/en-us/
