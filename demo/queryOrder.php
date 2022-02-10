@@ -19,7 +19,7 @@ use Ipasspay\IpasspayChannel\service\IpasspayService;
     //Try to initiate a order query request
     $ipasspay_service=new IpasspayService('sandbox');//Env can be 'live' or 'sandbox'. By default, it is 'live'.
 
-    //Note: If you need to dynamically configure merchant information in the program, please use setConfig($config) to change the data configured in the ipasspayconfig.php file
+    //Note: If you need to dynamically configure merchant's API information in the program, please use setConfig($config) to change the data configured in the ipasspayconfig.php file
     /*$config['merchant_id']='111111';
     $config['app_id']='222222';
     $config['api_secret']='333333';
