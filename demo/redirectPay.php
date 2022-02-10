@@ -43,6 +43,16 @@ use Ipasspay\IpasspayChannel\service\IpasspayService;
         exit;
     }
 
+    //If you need to get the redirect url, please use redirectByGet(false) method to get it.
+    /*$redirect_url=$ipasspay_service->redirectByGet(false);
+    echo 'Redirect url：'.$redirect_url;
+    if ($redirect_url===false) {
+         //The request is exception
+        echo 'Error Code：'.$ipasspay_service->getErrorCode()."\n";
+        echo 'Error Message：'.$ipasspay_service->getErrorMsg()."\n";
+        exit;
+    }*/
+
     //Both the redirectByGet and redirectByPost methods can be used to redirect iPasspay's checkout page.
     if (!$ipasspay_service->redirectByPost()) {
         //The request is exception
