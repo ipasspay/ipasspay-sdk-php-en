@@ -79,7 +79,7 @@ class IpasspayService extends ChannelService
         return $this->deal($request_param);
     }
 
-    public function redirectByGet() {
+    public function redirectByGet($auto_redirect=true) {
         //Encapsulate the request url for the Host request
         $parameterString = '';
         $request_data=$this->handler->getRequestData();
@@ -89,8 +89,12 @@ class IpasspayService extends ChannelService
         $redirect_pay = $this->handler->getRequestUrl() . $parameterString;
 
         if (is_string($redirect_pay) && $redirect_pay!='') {
-            Header("Location:".$redirect_pay);
-            return true;
+            if ($auto_redirect) {
+                Header("Location:".$redirect_pay);
+                return true;
+            } else {
+                return $redirect_pay;
+            }
         } else {
             $this->error_code=IpasspayConstant::ERROR_CODE['REQUEST URL ERROR'];
             $this->error_msg='GET request url error';
