@@ -25,7 +25,7 @@ use Ipasspay\IpasspayChannel\service\IpasspayService;
     $order_items[]=$order_item;
     $request_data['order_items'] = json_encode($order_items,JSON_UNESCAPED_UNICODE+JSON_UNESCAPED_SLASHES);//Replace your own order items, json format.
 
-    $request_data['bill_email'] = 'test1@ipasspay.com';//Replace your customer's email
+    $request_data['bill_email'] = 'test1@gmail.com';//Replace your customer's email
 
     $request_data['source_url'] = 'https://www.yourdomain.com/pay?shopping_cart=123';//Customer's source URL
     //Synchronous notification is accessible on the internet, and only works under the host endpoint, that means the page will be redirected to this syn_notify_url after customer payment is completed. merchant can obtain the parameters from platform through GET method. In general we suggest merchant confirm the transaction final status from asynchronous notification.
