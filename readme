@@ -23,3 +23,9 @@ uploadExpress.php : Tracking upload endpoint
 
 [API document link]
 https://www.apihome.dev/ipasspay.biz/en-us/
+
+[Airsecurecard Channel]
+To use the Airsecurecard service, refer to the examples in the Airsecurecard directory in Demo.
+The corresponding configuration files in the src/AirsecurecardChannel/config directory.
+[Airsecurecard API document link]
+https://www.apihome.dev/airsecurecard.com/en-us/
