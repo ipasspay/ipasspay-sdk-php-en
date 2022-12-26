@@ -34,6 +34,11 @@ class IpasspayConstant
             'bill_firstname',
             'bill_lastname',
         ],
+        "gateway_1.0_without_card"=>[
+            'source_ip',
+            'bill_firstname',
+            'bill_lastname',
+        ],
         '2.0'=>[
             'bill_phone',
             'bill_country',

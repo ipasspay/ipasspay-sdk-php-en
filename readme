@@ -12,6 +12,7 @@ Tips: 1.In Linux, the command to replace the file is: cp IpasspayConfig-dist.php
 
 [File description in Demo]
 directPay.php : Payment Gateway(Direct)
+directPayWithoutCard.php: No credit card information payment gateway (such as digital currency payment gateway)
 redirectPay.php : Payment Gateway(Host)
 ipasspayNotify.php : Asyn notification
 ipasspayReturn.php : Syn notification
@@ -29,3 +30,7 @@ To use the Airsecurecard service, refer to the examples in the Airsecurecard dir
 The corresponding configuration files in the src/AirsecurecardChannel/config directory.
 [Airsecurecard API document link]
 https://www.apihome.dev/airsecurecard.com/en-us/
+
+2022-12-26
+Add examples and changes to payment gateways without credit card information (such as digital currency payment gateways)
+Notice: Add "without_card_pay_url" config in ipasspayconfig-did.php

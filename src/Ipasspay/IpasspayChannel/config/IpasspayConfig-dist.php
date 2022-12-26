@@ -13,6 +13,7 @@ class IpasspayConfig
             "api_secret"=>"",
 
             "direct_pay_url" => "https://service.ipasspay.biz/gateway/OpenApi/onlinePay",
+            "without_card_pay_url" => "https://service.ipasspay.biz/gateway/OpenApi/redirectOnlinePay",
             "redirect_pay_url" => "https://service.ipasspay.biz/gateway/Index/checkout",
             "query_order_url" => "https://service.ipasspay.biz/gateway/OpenApi/getOrderDetail",
             "query_order_list_url" => "https://service.ipasspay.biz/gateway/OpenApi/getOrderList",
@@ -27,6 +28,7 @@ class IpasspayConfig
             "api_secret"=>"LEMiaDoJCGzVp0nZzoWzWmgxdlKc",
 
             "direct_pay_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/onlinePay",
+            "without_card_pay_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/redirectOnlinePay",
             "redirect_pay_url" => "https://sandbox.service.ipasspay.biz/gateway/Index/checkout",
             "query_order_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/getOrderDetail",
             "query_order_list_url" => "https://sandbox.service.ipasspay.biz/gateway/OpenApi/getOrderList",

@@ -30,9 +30,10 @@ class IpasspayService extends ChannelService
         $this->handler = new IpasspayChannelCommunication();
     }
 
-    public function onlinePay($request_param)
+    public function onlinePay($request_param,$with_card=true)
     {
         $this->logic_obj = new OnlinePayLogic($this->config);
+        $this->logic_obj->withCard($with_card);
         return $this->deal($request_param);
     }
 
