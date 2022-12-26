@@ -7,6 +7,8 @@ class OnlinePayLogic extends IpasspayChannelCommonLogic
 {
     protected $request_url_key = "direct_pay_url";
 
+    private $with_card=true;
+
     //Signature array
     protected $sign_field=[
         "merchant_id",
@@ -27,9 +29,16 @@ class OnlinePayLogic extends IpasspayChannelCommonLogic
         "order_status",
     ];
 
+    public function withCard($with_card) {
+        $this->with_card=$with_card;
+    }
+
     public function createData($params)
     {
         if (!$this->versionCheck()) return false;
+
+        $gateway_param=$this->with_card?IpasspayConstant::PAY_PARAM['gateway_1.0']:IpasspayConstant::PAY_PARAM['gateway_1.0_without_card'];
+        if (!$this->with_card) $this->request_url_key = 'without_card_pay_url';
 
         //Determine mandatory and optional data based on the version number
         switch ($this->config['version']) {
@@ -37,7 +46,7 @@ class OnlinePayLogic extends IpasspayChannelCommonLogic
                 $this->request_data_field=array_merge(
                     IpasspayConstant::PAY_PARAM['base'],
                     IpasspayConstant::PAY_PARAM['1.0'],
-                    IpasspayConstant::PAY_PARAM['gateway_1.0']
+                    $gateway_param
                 );
                 $this->optional_data_field=IpasspayConstant::PAY_PARAM['optional'];
                 break;
@@ -45,7 +54,7 @@ class OnlinePayLogic extends IpasspayChannelCommonLogic
                 $this->request_data_field=array_merge(
                     IpasspayConstant::PAY_PARAM['base'],
                     IpasspayConstant::PAY_PARAM['1.0'],
-                    IpasspayConstant::PAY_PARAM['gateway_1.0'],
+                    $gateway_param,
                     IpasspayConstant::PAY_PARAM['2.0']
                 );
                 $this->optional_data_field=array_merge(
@@ -56,7 +65,7 @@ class OnlinePayLogic extends IpasspayChannelCommonLogic
                 $this->request_data_field=array_merge(
                     IpasspayConstant::PAY_PARAM['base'],
                     IpasspayConstant::PAY_PARAM['1.0'],
-                    IpasspayConstant::PAY_PARAM['gateway_1.0'],
+                    $gateway_param,
                     IpasspayConstant::PAY_PARAM['2.0'],
                     IpasspayConstant::PAY_PARAM['3.0']
                 );
