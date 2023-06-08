@@ -14,6 +14,8 @@ class AirsecurecardConstant
         'optional'=>[
             'custom_data',
             'lang',
+            'ewallet_method',
+            'order_desc',
         ],
         "1.0"=>[
             'order_no',
